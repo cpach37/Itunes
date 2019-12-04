@@ -51,16 +51,48 @@ public class ListViewAdapter extends BaseAdapter {
     public View getView(final int position, View view, final ViewGroup viewGroup) {
 
         if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.activity_detalle_lista2, viewGroup, false);
+            view = LayoutInflater.from(context).inflate(R.layout.activity_detalle_lista4, viewGroup, false);
         }
 
         final ImageView imgFoto = (ImageView) view.findViewById(R.id.imgFoto);
-        TextView tvTitulo = (TextView) view.findViewById(R.id.tvTitulo);
-        TextView tvDescripcion = (TextView) view.findViewById(R.id.tvDescripcion);
-
+        TextView artistName = (TextView) view.findViewById(R.id.artistName);
+        TextView trackName = (TextView) view.findViewById(R.id.trackName);
+        TextView collectionCensoredName = (TextView) view.findViewById(R.id.collectionCensoredName);
+        TextView releaseDate = (TextView) view.findViewById(R.id.releaseDate);
         final Result thisresult = results.get(position);
-        tvTitulo.setText(thisresult.getCollectionName());
-        tvDescripcion.setText(thisresult.getArtistName());
+
+        /*
+        String resArtistName;
+        if (thisresult.getArtistName().length() >= 13) {
+            resArtistName = thisresult.getArtistName().substring(0, 13)+ "...";
+        } else {
+            resArtistName = thisresult.getArtistName();
+            }
+        artistName.setText(resArtistName); */
+
+        /*
+        String resTrackName;
+        if (thisresult.getTrackName().length() >= 13) {
+            resTrackName = thisresult.getTrackName().substring(0, 13)+ "...";
+        } else {
+            resTrackName = thisresult.getTrackName();
+            }
+            trackName.setText(resTrackName); */
+
+        /*
+        String resCollection;
+        if (thisresult.getCollectionCensoredName().length() >= 13) {
+            resCollection = thisresult.getCollectionCensoredName().substring(0, 13)+ "...";
+        } else {
+            resCollection = thisresult.getCollectionCensoredName();
+            collectionCensoredName.setText(resCollection);
+            }  */
+
+
+        artistName.setText(thisresult.getArtistName());
+        trackName.setText(thisresult.getTrackName());
+        collectionCensoredName.setText(thisresult.getCollectionCensoredName());
+        releaseDate.setText(thisresult.getReleaseDate());
 
         if (thisresult.getArtworkUrl100() != null && thisresult.getArtworkUrl100().length() > 0) {
            Picasso.get().load(thisresult.getArtworkUrl100()).placeholder(R.drawable.placeholder).into(imgFoto);

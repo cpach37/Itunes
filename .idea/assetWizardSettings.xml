@@ -73,9 +73,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundImage" value="C:\Users\crist\Desktop\BCI\background\imagen4.jpg" />
-                                      <entry key="legacyIconShape" value="NONE" />
-                                      <entry key="webIconShape" value="CIRCLE" />
+                                      <entry key="foregroundImage" value="C:\Users\crist\Desktop\BCI\background\windows.jpg" />
                                     </map>
                                   </option>
                                 </PersistentState>
